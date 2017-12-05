@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "The Hunger Maims", "Assembly-CSharp.csproj", "{F229F7F6-4DB8-6D28-9892-90B2B82B04B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F229F7F6-4DB8-6D28-9892-90B2B82B04B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F229F7F6-4DB8-6D28-9892-90B2B82B04B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F229F7F6-4DB8-6D28-9892-90B2B82B04B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F229F7F6-4DB8-6D28-9892-90B2B82B04B9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
