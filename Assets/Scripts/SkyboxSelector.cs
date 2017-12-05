@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DemoLand.PersistData;
 
 public class SkyboxSelector : MonoBehaviour {
 
@@ -10,9 +11,16 @@ public class SkyboxSelector : MonoBehaviour {
 	private void Awake() {
 		if (skyboxes == null || skyboxes.Length == 0) return;
 
-		int boxIdx = Random.Range(0, skyboxes.Length);
-		boxIdx = 2;
-		RenderSettings.skybox = skyboxes[boxIdx];
+		//int boxIdx = Random.Range(0, skyboxes.Length);
+		
+		int hatchlingsNum = 0;
+		if (PersistData.Instance.Has(DataKeys.NumOfHatchlings)) {
+			hatchlingsNum = (int)PersistData.Instance.Get(DataKeys.NumOfHatchlings);
+		}
+
+		if (hatchlingsNum > skyboxes.Length - 1) hatchlingsNum = 2;
+
+		RenderSettings.skybox = skyboxes[hatchlingsNum];
 
 		// Skybox specific graphics settings
 		/*switch (boxIdx) {

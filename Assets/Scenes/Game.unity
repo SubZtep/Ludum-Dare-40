@@ -174,7 +174,7 @@ MonoBehaviour:
   player: {fileID: 238820743}
   foodText: {fileID: 228734309}
   timeText: {fileID: 978271705}
-  winPanel: {fileID: 0}
+  winPanel: {fileID: 823687826}
 --- !u!1 &115206142
 GameObject:
   m_ObjectHideFlags: 0
@@ -3603,7 +3603,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 228734309}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -440.87082, y: 253.23248, z: 0}
+  m_LocalPosition: {x: -394.5158, y: 283.029, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 948827968}
@@ -3815,9 +3815,9 @@ MonoBehaviour:
   poo: {fileID: 1503749941782296, guid: 909dd956d15ee4a48a0be5d4415f7a5e, type: 2}
   startFoodNum: 0
   startOverweight: 5
-  maxFoodNum: 20
+  maxFoodNum: 26
   releaseFoodNum: 5
-  pcLoose: 0.5
+  pcLoose: 0.3
   eatAudio:
   - {fileID: 8300000, guid: de6726b178226b14699704c87dd28be9, type: 3}
   - {fileID: 8300000, guid: 08c27922c3175d04b9f1ae8dcab6df2a, type: 3}
@@ -4292,8 +4292,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 948827964}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 381, y: 220, z: 0}
-  m_LocalScale: {x: 0.8357631, y: 0.8357631, z: 0.8357631}
+  m_LocalPosition: {x: 395.5, y: 283, z: 0}
+  m_LocalScale: {x: 0.9657747, y: 0.9657747, z: 0.9657747}
   m_Children:
   - {fileID: 228734310}
   - {fileID: 978271706}
@@ -4333,7 +4333,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 978271705}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -440.87082, y: 212.40248, z: 0}
+  m_LocalPosition: {x: -394.5158, y: 242.19899, z: 0}
   m_LocalScale: {x: 1.000002, y: 1.000002, z: 1.000002}
   m_Children: []
   m_Father: {fileID: 948827968}
