@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using DemoLand.PersistData;
 using UnityEngine.SceneManagement;
 
@@ -69,24 +70,24 @@ public class Nest : MonoBehaviour {
 		foodText.SetActive(false);
 		timeText.SetActive(false);
 		winPanel.SetActive(true);
-		winnerMessageOn = true;
 		Time.timeScale = 0f;
-		Invoke("SetWinnerMessageOn", 5);
+		StartCoroutine(SetWinnerMessageOn());
 	}
 
-	private void SetWinnerMessageOn() {
-		Time.timeScale = 1f;
-		winnerMessageOn = true;	
+
+	private IEnumerator SetWinnerMessageOn() {
+		yield return new WaitForSecondsRealtime(3);
+		winnerMessageOn = true;
 	}
 
 	private void Update() {
 		if (winnerMessageOn) {
 			if (Input.anyKey) {
-				PersistData.Instance.Set(DataKeys.RequiredFood, 0);
-				foodText.SetActive(true);
-				timeText.SetActive(false);
-				winPanel.SetActive(false);
-				//Destroy(this.gameObject);
+				PersistData.Instance.Del(DataKeys.NumOfHatchlings);
+				PersistData.Instance.Del(DataKeys.RequiredFood);
+				PersistData.Instance.Del(DataKeys.AvailableTime);
+				Time.timeScale = 1f;
+				GoHome();
 			}
 		}
 	}

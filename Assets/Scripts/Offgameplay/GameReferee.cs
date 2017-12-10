@@ -11,7 +11,6 @@ public class GameReferee : MonoBehaviour {
 		}
 	}
 
-
 	public void SetGoals() {
 		int hatchlingsCount = (int)PersistData.Instance.Get(DataKeys.NumOfHatchlings);
 		int requiredFood;
@@ -46,5 +45,4 @@ public class GameReferee : MonoBehaviour {
 		PersistData.Instance.Set(DataKeys.RequiredFood, requiredFood);
 		PersistData.Instance.Set(DataKeys.AvailableTime, availableTime);
 	}
-
 }

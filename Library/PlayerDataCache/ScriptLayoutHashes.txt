@@ -1,4 +1,4 @@
-OSXStandalone
+WebGL
 1d62d1b7d59054871ce385f2a1ad2701 Assembly-CSharp.dll:.SkyboxSelector
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 970a95104359198fe1a98ef48655de8c UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack

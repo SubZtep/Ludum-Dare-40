@@ -71,19 +71,27 @@ public class PlayerEat : MonoBehaviour {
 		ScalePlayer();
 	}
 
-	public void ScalePlayer() {
+	public void ScalePlayer(bool didPoo = false) {
 		int foodCount = GetFoodCount();
 		Vector3 newScale = origTransScale;
 
-		if (foodCount >= startOverweight) {
+		if (foodCount > startOverweight) {
 			newScale.y += (foodCount-startOverweight) * 0.1f;
 			newScale.z += (foodCount-startOverweight) * 0.05f;
 
-			control.speed -= (control.speed/100*pcLoose)*(foodCount-startOverweight);
-			control.jumpSpeed -= (control.jumpSpeed/100*pcLoose)*(foodCount-startOverweight);
-			control.maxUpPosition -= (control.maxUpPosition/100*pcLoose)*(foodCount-startOverweight);
-			control.slowDownPosY -= (control.slowDownPosY/100*pcLoose)*(foodCount-startOverweight);
-			control.minSpeed -= (control.minSpeed/100*pcLoose)*(foodCount-startOverweight);
+			if (didPoo) {
+				control.speed += (control.speed/100*pcLoose)*(foodCount-startOverweight);
+				control.jumpSpeed += (control.jumpSpeed/100*pcLoose)*(foodCount-startOverweight);
+				control.maxUpPosition += (control.maxUpPosition/100*pcLoose)*(foodCount-startOverweight);
+				control.slowDownPosY += (control.slowDownPosY/100*pcLoose)*(foodCount-startOverweight);
+				control.minSpeed += (control.minSpeed/100*pcLoose)*(foodCount-startOverweight);
+			} else {
+				control.speed -= (control.speed/100*pcLoose)*(foodCount-startOverweight);
+				control.jumpSpeed -= (control.jumpSpeed/100*pcLoose)*(foodCount-startOverweight);
+				control.maxUpPosition -= (control.maxUpPosition/100*pcLoose)*(foodCount-startOverweight);
+				control.slowDownPosY -= (control.slowDownPosY/100*pcLoose)*(foodCount-startOverweight);
+				control.minSpeed -= (control.minSpeed/100*pcLoose)*(foodCount-startOverweight);
+			}
 		} else {
 			control.speed = origSpeed;
 			control.jumpSpeed = origJumpSpeed;
@@ -160,7 +168,7 @@ public class PlayerEat : MonoBehaviour {
 		pooObj.GetComponent<Rigidbody>().AddForce(force, ForceMode.Impulse);
 		PersistData.Instance.Set(DataKeys.CurrFoodCount, --foodCount);
 		foodCounter.Eaten();
-		ScalePlayer();
+		ScalePlayer(true);
 		PlayPoo();
 	}
 
